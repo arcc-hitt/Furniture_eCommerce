@@ -7,7 +7,7 @@ import { ROUTES } from '../../utils/constants';
 
 const Header = () => {
   const { user, logout } = useAuth();
-  const { cartItems } = useCart();
+  const { getCartCount } = useCart();
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -21,7 +21,7 @@ const Header = () => {
     }
   };
 
-  const cartItemCount = cartItems ? cartItems.length : 0;
+  const cartItemCount = getCartCount();
 
   return (
     <header className="bg-white shadow-sm border-b sticky top-0 z-50">
