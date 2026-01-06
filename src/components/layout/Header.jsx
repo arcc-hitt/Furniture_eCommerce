@@ -79,6 +79,12 @@ const Header = () => {
                     </span>
                   )}
                 </Link>
+                <Link 
+                  to={ROUTES.ADDRESSES} 
+                  className="text-gray-700 hover:text-blue-600 transition duration-200 font-medium"
+                >
+                  Addresses
+                </Link>
                 <div className="flex items-center space-x-3">
                   <span className="text-gray-700 text-sm">
                     Welcome, {user.displayName || user.email?.split('@')[0]}
@@ -167,6 +173,13 @@ const Header = () => {
                         {cartItemCount}
                       </span>
                     )}
+                  </Link>
+                  <Link 
+                    to={ROUTES.ADDRESSES} 
+                    className="text-gray-700 hover:text-blue-600 transition duration-200 font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Addresses
                   </Link>
                   <div className="pt-2 border-t border-gray-200">
                     <p className="text-gray-700 text-sm mb-3">

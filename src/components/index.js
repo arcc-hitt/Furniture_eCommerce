@@ -23,3 +23,8 @@ export { default as SearchResults } from './products/SearchResults';
 // Cart components
 export { default as Cart } from './cart/Cart';
 export { default as CartItem } from './cart/CartItem';
+
+// Address components
+export { default as AddressForm } from './address/AddressForm';
+export { default as AddressSelector } from './address/AddressSelector';
+export { default as AddressManager } from './address/AddressManager';

@@ -11,6 +11,7 @@ import RegisterPage from './pages/RegisterPage';
 import ProductsPage from './pages/ProductsPage';
 import CartPage from './pages/CartPage';
 import CategoryPage from './pages/CategoryPage';
+import AddressPage from './pages/AddressPage';
 
 // Import components
 import ProductDetails from './components/products/ProductDetails';
@@ -32,6 +33,7 @@ function App() {
               <Route path={ROUTES.PRODUCT_DETAILS} element={<ProductDetails />} />
               <Route path={ROUTES.CATEGORY} element={<CategoryPage />} />
               <Route path={ROUTES.CART} element={<CartPage />} />
+              <Route path={ROUTES.ADDRESSES} element={<AddressPage />} />
               {/* Additional routes will be added in later tasks */}
             </Routes>
           </Layout>
