@@ -2,6 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import { CartProvider } from './contexts/CartContext';
+import Layout from './components/layout/Layout';
 
 // Import pages
 import HomePage from './pages/HomePage';
@@ -18,14 +19,16 @@ function App() {
     <Router>
       <AuthProvider>
         <CartProvider>
-          <Routes>
-            <Route path={ROUTES.HOME} element={<HomePage />} />
-            <Route path={ROUTES.LOGIN} element={<LoginPage />} />
-            <Route path={ROUTES.REGISTER} element={<RegisterPage />} />
-            <Route path={ROUTES.PRODUCTS} element={<ProductsPage />} />
-            <Route path={ROUTES.CART} element={<CartPage />} />
-            {/* Additional routes will be added in later tasks */}
-          </Routes>
+          <Layout>
+            <Routes>
+              <Route path={ROUTES.HOME} element={<HomePage />} />
+              <Route path={ROUTES.LOGIN} element={<LoginPage />} />
+              <Route path={ROUTES.REGISTER} element={<RegisterPage />} />
+              <Route path={ROUTES.PRODUCTS} element={<ProductsPage />} />
+              <Route path={ROUTES.CART} element={<CartPage />} />
+              {/* Additional routes will be added in later tasks */}
+            </Routes>
+          </Layout>
         </CartProvider>
       </AuthProvider>
     </Router>
