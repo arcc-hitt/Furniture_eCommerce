@@ -80,6 +80,12 @@ const Header = () => {
                   )}
                 </Link>
                 <Link 
+                  to={ROUTES.ORDERS} 
+                  className="text-gray-700 hover:text-blue-600 transition duration-200 font-medium"
+                >
+                  Orders
+                </Link>
+                <Link 
                   to={ROUTES.ADDRESSES} 
                   className="text-gray-700 hover:text-blue-600 transition duration-200 font-medium"
                 >
@@ -173,6 +179,13 @@ const Header = () => {
                         {cartItemCount}
                       </span>
                     )}
+                  </Link>
+                  <Link 
+                    to={ROUTES.ORDERS} 
+                    className="text-gray-700 hover:text-blue-600 transition duration-200 font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Orders
                   </Link>
                   <Link 
                     to={ROUTES.ADDRESSES} 

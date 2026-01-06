@@ -1,13 +1,26 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../../contexts/CartContext';
+import { useAuth } from '../../contexts/AuthContext';
 import CartItem from './CartItem';
 import { ROUTES } from '../../utils/constants';
 
 const Cart = () => {
+  const navigate = useNavigate();
+  const { user } = useAuth();
   const { cartItems, getCartTotal, getCartCount, clearCart } = useCart();
 
   const cartTotal = getCartTotal();
   const cartCount = getCartCount();
+
+  const handleCheckout = () => {
+    if (!user) {
+      // Redirect to login if user is not authenticated
+      navigate(ROUTES.LOGIN, { state: { from: ROUTES.CHECKOUT } });
+    } else {
+      // Navigate to checkout page
+      navigate(ROUTES.CHECKOUT);
+    }
+  };
 
   if (cartItems.length === 0) {
     return (
@@ -125,10 +138,7 @@ const Cart = () => {
                 {/* Checkout Button */}
                 <button
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-medium text-lg transition-colors duration-300 mt-6"
-                  onClick={() => {
-                    // TODO: Navigate to checkout page when implemented
-                    alert('Checkout functionality will be implemented in later tasks');
-                  }}
+                  onClick={handleCheckout}
                 >
                   Proceed to Checkout
                 </button>

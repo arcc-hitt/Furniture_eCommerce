@@ -12,6 +12,9 @@ import ProductsPage from './pages/ProductsPage';
 import CartPage from './pages/CartPage';
 import CategoryPage from './pages/CategoryPage';
 import AddressPage from './pages/AddressPage';
+import CheckoutPage from './pages/CheckoutPage';
+import OrdersPage from './pages/OrdersPage';
+import OrderConfirmationPage from './pages/OrderConfirmationPage';
 
 // Import components
 import ProductDetails from './components/products/ProductDetails';
@@ -34,7 +37,9 @@ function App() {
               <Route path={ROUTES.CATEGORY} element={<CategoryPage />} />
               <Route path={ROUTES.CART} element={<CartPage />} />
               <Route path={ROUTES.ADDRESSES} element={<AddressPage />} />
-              {/* Additional routes will be added in later tasks */}
+              <Route path={ROUTES.CHECKOUT} element={<CheckoutPage />} />
+              <Route path={ROUTES.ORDERS} element={<OrdersPage />} />
+              <Route path="/order-confirmation/:orderId" element={<OrderConfirmationPage />} />
             </Routes>
           </Layout>
         </CartProvider>
