@@ -15,4 +15,8 @@ export { default as ProtectedRoute } from './auth/ProtectedRoute';
 // Product components
 export { default as ProductCard } from './products/ProductCard';
 export { default as ProductGrid } from './products/ProductGrid';
+export { default as ProductDetails } from './products/ProductDetails';
 export { default as CategoryDisplay } from './products/CategoryDisplay';
+
+// Cart components
+export { default as Cart } from './cart/Cart';
