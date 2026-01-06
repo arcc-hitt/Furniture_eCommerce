@@ -17,6 +17,8 @@ export { default as ProductCard } from './products/ProductCard';
 export { default as ProductGrid } from './products/ProductGrid';
 export { default as ProductDetails } from './products/ProductDetails';
 export { default as CategoryDisplay } from './products/CategoryDisplay';
+export { default as SearchInput } from './products/SearchInput';
+export { default as SearchResults } from './products/SearchResults';
 
 // Cart components
 export { default as Cart } from './cart/Cart';
