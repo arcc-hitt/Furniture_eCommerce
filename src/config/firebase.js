@@ -1,6 +1,11 @@
 // Firebase configuration for User Application
 // This file initializes Firebase services using environment variables
 
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getDatabase } from 'firebase/database';
+import { getStorage } from 'firebase/storage';
+
 // Firebase configuration object using Vite environment variables
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -32,7 +37,16 @@ if (missingEnvVars.length > 0) {
   );
 }
 
-export default firebaseConfig;
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+// Initialize Firebase services
+export const auth = getAuth(app);
+export const database = getDatabase(app);
+export const storage = getStorage(app);
+
+// Export the app instance
+export default app;
 
 // Export app configuration
 export const appConfig = {

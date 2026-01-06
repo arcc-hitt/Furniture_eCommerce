@@ -1,0 +1,14 @@
+// Footer component placeholder
+// Will be implemented in later tasks
+
+const Footer = () => {
+  return (
+    <footer className="bg-gray-800 text-white py-8">
+      <div className="container mx-auto px-4">
+        <p className="text-center">&copy; 2024 Furniture Store. All rights reserved.</p>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
